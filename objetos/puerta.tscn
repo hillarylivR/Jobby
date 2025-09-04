@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4fenuyyr37oh"]
+
+[ext_resource type="Texture2D" uid="uid://ds7n5rcjmc50j" path="res://Assets/puerta.png" id="1_rvl74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omysh"]
+size = Vector2(95, 144)
+
+[node name="Puerta" type="StaticBody2D"]
+
+[node name="Puerta" type="Sprite2D" parent="."]
+position = Vector2(77, 83)
+scale = Vector2(0.330078, 0.277344)
+texture = ExtResource("1_rvl74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(78.5, 82)
+shape = SubResource("RectangleShape2D_omysh")

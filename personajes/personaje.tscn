@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhcti3h82ffp8"]
+
+[ext_resource type="Texture2D" uid="uid://dm7xiysfslk2l" path="res://Assets/chistoso.webp" id="1_6ak6a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q47eh"]
+radius = 38.0
+height = 90.0
+
+[node name="Personaje" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(534, 286)
+scale = Vector2(0.33789, 0.34375)
+texture = ExtResource("1_6ak6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(533, 286)
+shape = SubResource("CapsuleShape2D_q47eh")
