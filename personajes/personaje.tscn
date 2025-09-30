@@ -9,10 +9,10 @@ height = 90.0
 [node name="Personaje" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(534, 286)
+position = Vector2(1.24988, -2)
 scale = Vector2(0.33789, 0.34375)
 texture = ExtResource("1_6ak6a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(533, 286)
+position = Vector2(0.249878, -2)
 shape = SubResource("CapsuleShape2D_q47eh")

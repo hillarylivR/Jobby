@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxyalfkyy7b5"]
+
+[ext_resource type="Texture2D" uid="uid://bj1dfwc2inr2l" path="res://Assets/tablon.png" id="1_mkvfc"]
+
+[node name="Tablon" type="Node2D"]
+
+[node name="Tablon" type="Sprite2D" parent="."]
+position = Vector2(484, 102)
+scale = Vector2(1.10381, 0.789954)
+texture = ExtResource("1_mkvfc")

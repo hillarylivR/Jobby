@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1i3iouex1xbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boubu"]
+size = Vector2(1006.59, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miblc"]
+size = Vector2(36.5, 757)
+
+[node name="Pared" type="StaticBody2D"]
+
+[node name="Colarriba" type="CollisionShape2D" parent="."]
+position = Vector2(478.406, 56.5)
+shape = SubResource("RectangleShape2D_boubu")
+
+[node name="Colabajo" type="CollisionShape2D" parent="."]
+position = Vector2(464, 648)
+shape = SubResource("RectangleShape2D_boubu")
+
+[node name="Colizquierda" type="CollisionShape2D" parent="."]
+position = Vector2(-19.75, 366)
+shape = SubResource("RectangleShape2D_miblc")
+
+[node name="Colderecha" type="CollisionShape2D" parent="."]
+position = Vector2(984, 366)
+shape = SubResource("RectangleShape2D_miblc")

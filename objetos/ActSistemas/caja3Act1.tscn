@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch8octu8skipm"]
+
+[ext_resource type="PackedScene" uid="uid://drd3nqe7evkxk" path="res://objetos/ActSistemas/cajaProgr.tscn" id="1_qu8k3"]
+
+[node name="CajaProgr" instance=ExtResource("1_qu8k3")]
+
+[node name="RichTextLabel" parent="." index="0"]
+text = "print(\"La suma es:\", suma)"

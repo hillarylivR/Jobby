@@ -11,13 +11,22 @@ config_version=5
 [application]
 
 config/name="Jobby"
-run/main_scene="res://Pantallas/lobby.tscn"
+run/main_scene="uid://djdam25ipdhpw"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Jobby"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "purple",
+"res://Pantallas/": "green",
+"res://objetos/": "blue",
+"res://personajes/": "yellow"
+}
 
 [input]
 
