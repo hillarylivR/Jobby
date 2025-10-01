@@ -5,5 +5,8 @@
 [node name="CajaProgr" instance=ExtResource("1_d8yk2")]
 
 [node name="RichTextLabel" parent="." index="0"]
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
 text = "numeros = [2, 4, 6, 8]
 suma = 0"

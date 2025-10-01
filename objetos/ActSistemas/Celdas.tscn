@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhqqlc7g8yh0r"]
+
+[ext_resource type="Script" uid="uid://bxhqihsnxecaj" path="res://objetos/ActSistemas/Celdas.cs" id="1_sdaej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fs5j"]
+size = Vector2(257, 84)
+
+[sub_resource type="Gradient" id="Gradient_4fs5j"]
+colors = PackedColorArray(0.313039, 0.0511018, 0.517488, 1, 0.0852891, 0.119189, 0.264837, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dmv4h"]
+gradient = SubResource("Gradient_4fs5j")
+
+[node name="Celdas" type="Area2D"]
+script = ExtResource("1_sdaej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 43)
+shape = SubResource("RectangleShape2D_4fs5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(86.5, 41.75)
+scale = Vector2(1.67578, 84.5)
+texture = SubResource("GradientTexture1D_dmv4h")

@@ -1,13 +1,103 @@
-[gd_scene load_steps=9 format=3 uid="uid://cltwv7vj1u41v"]
+[gd_scene load_steps=12 format=3 uid="uid://cltwv7vj1u41v"]
 
 [ext_resource type="Texture2D" uid="uid://b0jxucxb8hfov" path="res://Assets/actividades/FondoSis.png" id="1_hh5in"]
 [ext_resource type="Texture2D" uid="uid://bdh7owy3dquna" path="res://Assets/actividades/cuadr.png" id="2_l2itw"]
 [ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="3_nobfv"]
 [ext_resource type="PackedScene" uid="uid://dt4vu5qr7p2tg" path="res://objetos/ActSistemas/caja1Act1.tscn" id="4_4qjrj"]
 [ext_resource type="PackedScene" uid="uid://dscb6f8x1c3mr" path="res://objetos/ActSistemas/caja2Act1.tscn" id="5_hytrq"]
-[ext_resource type="Script" uid="uid://tl5wlif1au5j" path="res://objetos/ActSistemas/Caja1Act1.cs" id="5_u5mvk"]
 [ext_resource type="PackedScene" uid="uid://ch8octu8skipm" path="res://objetos/ActSistemas/caja3Act1.tscn" id="6_0wjlg"]
-[ext_resource type="Script" uid="uid://46dgy1fs0ypm" path="res://Pantallas/sistemas/PanelContainer1.cs" id="8_mlspl"]
+[ext_resource type="PackedScene" uid="uid://pnqn6hfm1cw4" path="res://objetos/ActSistemas/celdas1.tscn" id="7_mlspl"]
+[ext_resource type="PackedScene" uid="uid://dhmjjljm7kegk" path="res://objetos/ActSistemas/celdas2.tscn" id="8_gkkct"]
+[ext_resource type="PackedScene" uid="uid://c6rvsmi7y0fxb" path="res://objetos/ActSistemas/celdas3.tscn" id="9_oobl1"]
+[ext_resource type="Script" uid="uid://c3iqyhhy1chfv" path="res://objetos/ActSistemas/ActSisGlobal.cs" id="10_gkkct"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_0wjlg"]
+script/source = "using Godot;
+using System;
+
+public partial class Caja1Act1 : Panel
+{
+	private bool _dragging = false;
+	private Vector2 _dragOffset;
+	private Node? _originalParent = null;
+	private Vector2 _originalPosition = Vector2.Zero;
+
+	public override void _GuiInput(InputEvent @event)
+	{
+		// Click izquierdo: comenzar / terminar arrastre
+		if (@event is InputEventMouseButton mb && mb.ButtonIndex == MouseButton.Left)
+		{
+			if (mb.Pressed)
+			{
+				// INICIO DEL ARRASTRE
+				_dragging = true;
+				_dragOffset = mb.Position;
+
+				// Guardar estado original
+				_originalParent = GetParent();
+				_originalPosition = Position;
+
+				// REPARENT al root de la escena
+				var sceneRoot = GetTree().CurrentScene as Control;
+				if (sceneRoot != null && GetParent() != sceneRoot)
+				{
+					var globalBefore = GlobalPosition;
+					_originalParent.RemoveChild(this);
+					sceneRoot.AddChild(this);
+					GlobalPosition = globalBefore;
+				}
+
+				// Llevar al frente
+				MoveToFront();
+			}
+			else
+			{
+				// FIN DEL ARRASTRE
+				_dragging = false;
+				TrySnapToDropZoneOrReturn();
+			}
+		}
+		// Movimiento del mouse
+		else if (@event is InputEventMouseMotion mm && _dragging)
+		{
+			GlobalPosition = GetGlobalMousePosition() - _dragOffset;
+		}
+	}
+
+	private void TrySnapToDropZoneOrReturn()
+	{
+		Rect2 myRect = GetGlobalRect();
+
+		foreach (object obj in GetTree().GetNodesInGroup(\"drop_zone\"))
+		{
+			if (obj is Control zone)
+			{
+				Rect2 zoneRect = zone.GetGlobalRect();
+				if (zoneRect.Intersects(myRect))
+				{
+					GetParent().RemoveChild(this);
+					zone.AddChild(this);
+
+					// Centrar dentro del slot
+					Vector2 targetLocal = (zone.Size - Size) / 2;
+					Position = targetLocal;
+					return;
+				}
+			}
+		}
+
+		// Si no cae en zona válida → volver al padre original
+		if (_originalParent != null)
+		{
+			GetParent().RemoveChild(this);
+			_originalParent.AddChild(this);
+
+			if (!(_originalParent is Container))
+				Position = _originalPosition;
+		}
+	}
+}
+"
 
 [node name="Act1" type="Node2D"]
 
@@ -34,44 +124,27 @@ position = Vector2(574, 321)
 [node name="Respuestas" type="Node2D" parent="."]
 
 [node name="CajaProgr" parent="Respuestas" instance=ExtResource("4_4qjrj")]
-offset_left = 48.0
-offset_top = 112.0
-offset_right = 328.0
-offset_bottom = 168.0
-theme = null
-script = ExtResource("5_u5mvk")
+position = Vector2(80, 53)
+script = SubResource("CSharpScript_0wjlg")
 
 [node name="CajaProgr2" parent="Respuestas" instance=ExtResource("5_hytrq")]
-offset_left = 48.0
-offset_top = 184.0
-offset_right = 328.0
-offset_bottom = 240.0
-theme = null
+position = Vector2(80, 200)
+script = null
 
 [node name="CajaProgr3" parent="Respuestas" instance=ExtResource("6_0wjlg")]
-offset_left = 48.0
-offset_top = 40.0
-offset_right = 328.0
-offset_bottom = 96.0
-theme = null
+position = Vector2(80, 124)
+script = null
 
-[node name="Resultados" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="PanelContainer1" type="PanelContainer" parent="Resultados" groups=["drop_zone"]]
-offset_left = 400.0
-offset_top = 104.0
-offset_right = 1104.0
-offset_bottom = 184.0
-script = ExtResource("8_mlspl")
+[node name="Celdas" parent="Node2D" instance=ExtResource("7_mlspl")]
+position = Vector2(525, 32)
 
-[node name="PanelContainer2" type="PanelContainer" parent="Resultados"]
-offset_left = 400.0
-offset_top = 208.0
-offset_right = 1104.0
-offset_bottom = 288.0
+[node name="Celdas2" parent="Node2D" instance=ExtResource("8_gkkct")]
+position = Vector2(526, 153)
 
-[node name="PanelContainer3" type="PanelContainer" parent="Resultados"]
-offset_left = 400.0
-offset_top = 312.0
-offset_right = 1104.0
-offset_bottom = 392.0
+[node name="Celdas3" parent="Node2D" instance=ExtResource("9_oobl1")]
+position = Vector2(528, 270)
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("10_gkkct")
