@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cltwv7vj1u41v"]
+[gd_scene load_steps=8 format=3 uid="uid://cltwv7vj1u41v"]
 
 [ext_resource type="Texture2D" uid="uid://b0jxucxb8hfov" path="res://Assets/actividades/FondoSis.png" id="1_hh5in"]
+[ext_resource type="PackedScene" uid="uid://dx0rauyvc10ql" path="res://objetos/ActSistemas/Cajas/Caja1.tscn" id="1_hytrq"]
 [ext_resource type="Texture2D" uid="uid://bdh7owy3dquna" path="res://Assets/actividades/cuadr.png" id="2_l2itw"]
 [ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="3_nobfv"]
+[ext_resource type="PackedScene" uid="uid://cahdx7deqv40f" path="res://objetos/ActSistemas/Celdas/Celda.tscn" id="4_4qjrj"]
 [ext_resource type="Script" uid="uid://e3cjrl4clsae" path="res://objetos/ActSistemas/AgregarObjetos.gd" id="6_0wjlg"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_hytrq"]
@@ -73,5 +75,12 @@ position = Vector2(574, 321)
 [node name="Global" type="Node" parent="."]
 script = SubResource("CSharpScript_hytrq")
 
-[node name="AñadirObjetos" type="Node2D" parent="."]
+[node name="Celda" parent="." instance=ExtResource("4_4qjrj")]
+position = Vector2(604, 85)
+
+[node name="Caja1" parent="." instance=ExtResource("1_hytrq")]
+visible = false
+position = Vector2(54, 36)
+
+[node name="Cajas" type="Node2D" parent="."]
 script = ExtResource("6_0wjlg")

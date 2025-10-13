@@ -13,7 +13,7 @@ position = Vector2(478.406, 56.5)
 shape = SubResource("RectangleShape2D_boubu")
 
 [node name="Colabajo" type="CollisionShape2D" parent="."]
-position = Vector2(464, 648)
+position = Vector2(464, 610)
 shape = SubResource("RectangleShape2D_boubu")
 
 [node name="Colizquierda" type="CollisionShape2D" parent="."]

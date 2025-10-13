@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhmjjljm7kegk"]
-
-[ext_resource type="PackedScene" uid="uid://bhqqlc7g8yh0r" path="res://objetos/ActSistemas/Celdas.tscn" id="1_iwh73"]
-
-[node name="Celdas" instance=ExtResource("1_iwh73")]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cahdx7deqv40f"]
+
+[ext_resource type="Script" uid="uid://duimeyqnxhlij" path="res://objetos/ActSistemas/Celdas/celdaScript.gd" id="1_5ht83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ht83"]
+size = Vector2(401, 73)
+
+[node name="Celda" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_5ht83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_5ht83")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -199.0
+offset_top = -36.0
+offset_right = 201.0
+offset_bottom = 34.0
+color = Color(0.239216, 0.188235, 0.462745, 1)
