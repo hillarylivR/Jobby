@@ -12,12 +12,12 @@ config_version=5
 
 config/name="Jobby"
 run/main_scene="uid://djdam25ipdhpw"
-config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSistemas="*res://objetos/ActSistemas/global_sistemas.gd"
+GlobalSistemas="*res://Objetos/ActSistemas/GlobalSistemas.gd"
 
 [dotnet]
 
@@ -27,9 +27,9 @@ project/assembly_name="Jobby"
 
 folder_colors={
 "res://Assets/": "purple",
+"res://Objetos/": "blue",
 "res://Pantallas/": "green",
-"res://objetos/": "blue",
-"res://personajes/": "yellow"
+"res://Personaje/": "yellow"
 }
 
 [global_group]

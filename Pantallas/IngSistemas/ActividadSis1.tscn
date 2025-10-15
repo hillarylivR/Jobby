@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://cltwv7vj1u41v"]
+
+[ext_resource type="Texture2D" uid="uid://b0jxucxb8hfov" path="res://Assets/actividades/FondoSis.png" id="1_sffbt"]
+[ext_resource type="Texture2D" uid="uid://bdh7owy3dquna" path="res://Assets/actividades/cuadr.png" id="2_j4h4c"]
+[ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="3_jqdku"]
+[ext_resource type="Script" uid="uid://e3cjrl4clsae" path="res://Objetos/ActSistemas/AgregarObjetos.gd" id="4_dn1ym"]
+[ext_resource type="PackedScene" uid="uid://wgqqs0tm7usq" path="res://Objetos/ActSistemas/BotónInicio.tscn" id="5_eq68t"]
+[ext_resource type="Script" uid="uid://domt4bsw6emwe" path="res://GlobalScripts/CambioEscenaBotón.gd" id="5_j4h4c"]
+[ext_resource type="Script" uid="uid://rxkw02uxjicn" path="res://Objetos/ActSistemas/BotónInicio.gd" id="6_6l7fx"]
+[ext_resource type="Texture2D" uid="uid://db1pdgsmwwlu4" path="res://Assets/botonatras.png" id="7_8lrnl"]
+
+[node name="Act1" type="Node2D"]
+
+[node name="decoracion" type="Node2D" parent="."]
+
+[node name="FondoSis" type="Sprite2D" parent="decoracion"]
+position = Vector2(570, 321.5)
+scale = Vector2(1.61351, 1.3854)
+texture = ExtResource("1_sffbt")
+
+[node name="Cuadr" type="Sprite2D" parent="decoracion"]
+position = Vector2(191.75, 232)
+scale = Vector2(0.444986, 0.562336)
+texture = ExtResource("2_j4h4c")
+
+[node name="Papel" type="Sprite2D" parent="decoracion"]
+position = Vector2(752, 232)
+scale = Vector2(1.83911, 0.689102)
+texture = ExtResource("3_jqdku")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 321)
+
+[node name="BotónRetroceder" type="Button" parent="."]
+offset_left = 9.0
+offset_top = 532.0
+offset_right = 529.0
+offset_bottom = 1052.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("7_8lrnl")
+script = ExtResource("5_j4h4c")
+siguiente_escena = "res://Pantallas/IngSistemas/IngSistemas.tscn"
+
+[node name="AñadirObjetos" type="Node2D" parent="."]
+script = ExtResource("4_dn1ym")
+
+[node name="Button" parent="AñadirObjetos" instance=ExtResource("5_eq68t")]
+offset_left = 1071.0
+offset_top = 27.0
+offset_right = 1121.0
+offset_bottom = 81.0
+script = ExtResource("6_6l7fx")
+
+[connection signal="pressed" from="AñadirObjetos/Button" to="AñadirObjetos" method="_on_button_pressed"]

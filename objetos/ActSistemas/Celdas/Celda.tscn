@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cahdx7deqv40f"]
 
-[ext_resource type="Script" uid="uid://duimeyqnxhlij" path="res://objetos/ActSistemas/Celdas/celdaScript.gd" id="1_5ht83"]
+[ext_resource type="Script" uid="uid://duimeyqnxhlij" path="res://Objetos/ActSistemas/Celdas/Celda.gd" id="1_5ht83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ht83"]
 size = Vector2(296, 27)
