@@ -21,6 +21,34 @@ func crear_celdas(num):
 	for i in range(num):
 		var celda = celda_escena.instantiate()
 		celda.position = Vector2(600, c)
+		celda.celda_id = i
+		celda.add_to_group("dropable")
 		add_child(celda)
 		c += 100
 		
+func verificar_orden():
+	var celdas = get_tree().get_nodes_in_group("dropable")
+	celdas.sort_custom(func(a, b): return a.celda_id < b.celda_id)
+
+	var palabra_formada = []
+	for celda in celdas:
+		if celda.caja_actual:
+			palabra_formada.append(celda.caja_actual.texto)
+		else:
+			palabra_formada.append("_")
+
+	print("Orden actual:")
+	for linea in palabra_formada:
+		print(linea)
+
+	var orden_correcto = ['numeros = [2, 4, 6, 8]\n suma = 0',
+						  'for n in numeros:\n suma += n',
+						  'print("La suma es:", suma)']
+
+	if palabra_formada == orden_correcto:
+		print("✅ Solución correcta")
+	else:
+		print("❌ Solución incorrecta")
+		
+func _on_button_pressed():
+	verificar_orden()

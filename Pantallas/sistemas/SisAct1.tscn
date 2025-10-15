@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cltwv7vj1u41v"]
+[gd_scene load_steps=8 format=3 uid="uid://cltwv7vj1u41v"]
 
 [ext_resource type="Texture2D" uid="uid://b0jxucxb8hfov" path="res://Assets/actividades/FondoSis.png" id="1_hh5in"]
 [ext_resource type="Texture2D" uid="uid://bdh7owy3dquna" path="res://Assets/actividades/cuadr.png" id="2_l2itw"]
 [ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="3_nobfv"]
+[ext_resource type="PackedScene" uid="uid://wgqqs0tm7usq" path="res://objetos/ActSistemas/BotonInicio.tscn" id="5_hytrq"]
 [ext_resource type="Script" uid="uid://e3cjrl4clsae" path="res://objetos/ActSistemas/AgregarObjetos.gd" id="6_0wjlg"]
+[ext_resource type="Script" uid="uid://rxkw02uxjicn" path="res://objetos/ActSistemas/boton_inicio.gd" id="6_8s2e4"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_hytrq"]
 script/source = "using Godot;
@@ -75,3 +77,12 @@ script = SubResource("CSharpScript_hytrq")
 
 [node name="AñadirObjetos" type="Node2D" parent="."]
 script = ExtResource("6_0wjlg")
+
+[node name="Button" parent="AñadirObjetos" instance=ExtResource("5_hytrq")]
+offset_left = 1071.0
+offset_top = 27.0
+offset_right = 1121.0
+offset_bottom = 81.0
+script = ExtResource("6_8s2e4")
+
+[connection signal="pressed" from="AñadirObjetos/Button" to="AñadirObjetos" method="_on_button_pressed"]

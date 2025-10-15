@@ -26,10 +26,17 @@ func _process(delta):
 			var shape_center = body_ref.get_node("CollisionShape2D").global_position
 			GlobalSistemas.is_dragging = false
 			var tween = get_tree().create_tween()
-			if is_inside_dropable:
-				tween.tween_property(self, "position", shape_center, 0.2).set_ease(Tween.EASE_OUT)
-			else: 
-				tween.tween_property(self, "global_position", shape_center, 0.2).set_ease(Tween.EASE_OUT)
+			if is_inside_dropable and body_ref != null:
+				var CeldaPos = body_ref.global_position
+				tween.tween_property(self, "position", CeldaPos, 0.2).set_ease(Tween.EASE_OUT)
+				
+				if body_ref.has_method("set_caja_actual"):
+					body_ref.set_caja_actual(self)
+				elif "caja_actual" in body_ref:
+					body_ref.caja_actual = self
+					get_parent().verificar_orden()
+			else:
+				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 func _on_area_2d_mouse_entered():
 	if not GlobalSistemas.is_dragging:

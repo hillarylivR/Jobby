@@ -7,7 +7,7 @@ size = Vector2(97, 74)
 
 [node name="Puerta" type="Area2D"]
 
-[node name="Puerta" type="Sprite2D" parent="."]
+[node name="SpritePuerta" type="Sprite2D" parent="."]
 position = Vector2(77, 83)
 scale = Vector2(0.330078, 0.277344)
 texture = ExtResource("1_rvl74")
