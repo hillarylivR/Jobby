@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhcti3h82ffp8"]
 
-[ext_resource type="Texture2D" uid="uid://dm7xiysfslk2l" path="res://Assets/chistoso.webp" id="1_6ak6a"]
+[ext_resource type="Texture2D" uid="uid://dm7xiysfslk2l" path="res://Assets/personajes/chistoso.webp" id="1_6ak6a"]
 
 [sub_resource type="GDScript" id="GDScript_7uyon"]
 script/source = "

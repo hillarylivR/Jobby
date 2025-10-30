@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdh7owy3dquna"
-path="res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"
+uid="uid://8n1c226r7fny"
+path="res://.godot/imported/oyeoye.png-06682c29cedb08c5dc9392b045b3bfcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/actividades/cuadr.png"
-dest_files=["res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"]
+source_file="res://Assets/personajes/oyeoye.png"
+dest_files=["res://.godot/imported/oyeoye.png-06682c29cedb08c5dc9392b045b3bfcc.ctex"]
 
 [params]
 

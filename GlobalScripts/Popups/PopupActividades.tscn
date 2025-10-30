@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nvp3idct5gfe"]
 
 [ext_resource type="Script" uid="uid://dc8ypb5n44v" path="res://GlobalScripts/Popups/PopupDialog.gd" id="1_t740l"]
-[ext_resource type="Texture2D" uid="uid://viqjr4gifcp8" path="res://Assets/NPC.jpg" id="2_83auf"]
+[ext_resource type="Texture2D" uid="uid://viqjr4gifcp8" path="res://Assets/personajes/NPC.jpg" id="2_83auf"]
 
 [node name="PopupInfo" type="Node2D"]
 position = Vector2(13, 454)
@@ -10,17 +10,17 @@ position = Vector2(13, 454)
 script = ExtResource("1_t740l")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = 192.0
-offset_top = 452.0
-offset_right = 1149.0
-offset_bottom = 633.0
+offset_left = 191.0
+offset_top = 466.0
+offset_right = 1148.0
+offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 12.0
 offset_top = 452.0
-offset_right = 197.0
-offset_bottom = 632.0
+offset_right = 260.0
+offset_bottom = 665.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2

@@ -8,14 +8,12 @@ size = Vector2(296, 27)
 [node name="Celda" type="StaticBody2D" groups=["dropable"]]
 script = ExtResource("1_5ht83")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 400.0
+offset_bottom = 70.0
+color = Color(0.4269685, 0.44113165, 0.56111723, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(0, 0.5)
+position = Vector2(203, 35)
 shape = SubResource("RectangleShape2D_5ht83")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -199.0
-offset_top = -36.0
-offset_right = 201.0
-offset_bottom = 34.0
-color = Color(0.239216, 0.188235, 0.462745, 1)

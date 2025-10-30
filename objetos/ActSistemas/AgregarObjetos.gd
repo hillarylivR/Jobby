@@ -26,7 +26,7 @@ func crear_celdas(num):
 		add_child(celda)
 		c += 100
 		
-func verificar_orden():
+func verificar_orden(mostrar_mensaje := false):
 	var celdas = get_tree().get_nodes_in_group("dropable")
 	celdas.sort_custom(func(a, b): return a.celda_id < b.celda_id)
 
@@ -37,18 +37,21 @@ func verificar_orden():
 		else:
 			palabra_formada.append("_")
 
-	print("Orden actual:")
-	for linea in palabra_formada:
-		print(linea)
+	var orden_correcto = [
+		'numeros = [2, 4, 6, 8]\n suma = 0',
+		'for n in numeros:\n suma += n',
+		'print("La suma es:", suma)'
+	]
 
-	var orden_correcto = ['numeros = [2, 4, 6, 8]\n suma = 0',
-						  'for n in numeros:\n suma += n',
-						  'print("La suma es:", suma)']
+	var es_correcto = palabra_formada == orden_correcto
 
-	if palabra_formada == orden_correcto:
-		print("✅ Solución correcta")
-	else:
-		print("❌ Solución incorrecta")
+	if mostrar_mensaje:
+		if es_correcto:
+			print("✅ Solución correcta")
+		else:
+			print("❌ Solución incorrecta")
+
+	return es_correcto
 		
 func _on_button_pressed():
-	verificar_orden()
+	verificar_orden(true)

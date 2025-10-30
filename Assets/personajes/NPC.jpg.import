@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://viqjr4gifcp8"
-path="res://.godot/imported/NPC.jpg-252a5a3bef0e5732fa0c528bd144bacb.ctex"
+path="res://.godot/imported/NPC.jpg-a807e648c5e9595f2e81a429633dc89a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NPC.jpg"
-dest_files=["res://.godot/imported/NPC.jpg-252a5a3bef0e5732fa0c528bd144bacb.ctex"]
+source_file="res://Assets/personajes/NPC.jpg"
+dest_files=["res://.godot/imported/NPC.jpg-a807e648c5e9595f2e81a429633dc89a.ctex"]
 
 [params]
 

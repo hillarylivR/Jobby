@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhm55jj1ik3b4"]
 
-[ext_resource type="Texture2D" uid="uid://0ykb5ocvc82h" path="res://Assets/computador.webp" id="1_compimg"]
+[ext_resource type="Texture2D" uid="uid://b210aul3fhpol" path="res://Assets/pcpc.png" id="1_xhkis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clmx7"]
-size = Vector2(266, 97)
+size = Vector2(223, 93.5)
 
 [node name="Computador" type="Area2D"]
 
 [node name="SpriteComputador" type="Sprite2D" parent="."]
-position = Vector2(2, 4)
-scale = Vector2(0.604286, 0.424286)
-texture = ExtResource("1_compimg")
+position = Vector2(2, 29.314259)
+scale = Vector2(0.604286, 0.5649208)
+texture = ExtResource("1_xhkis")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-36, -38.5)
+position = Vector2(0.5, -27.25)
 shape = SubResource("RectangleShape2D_clmx7")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://h053xjsem8xc"]
+
+[ext_resource type="Texture2D" uid="uid://m3l6bnghjyo2" path="res://Assets/tabl.png" id="1_xglkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xglkh"]
+size = Vector2(250, 85)
+
+[node name="Tablero" type="Area2D"]
+
+[node name="Tabl" type="Sprite2D" parent="."]
+position = Vector2(158.40623, 130.68752)
+scale = Vector2(0.88107646, 0.7239583)
+texture = ExtResource("1_xglkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(158, 62.5)
+shape = SubResource("RectangleShape2D_xglkh")

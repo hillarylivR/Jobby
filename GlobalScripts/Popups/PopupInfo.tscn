@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c021l7bj1krjc"]
 
 [ext_resource type="Script" uid="uid://dc8ypb5n44v" path="res://GlobalScripts/Popups/PopupDialog.gd" id="1_ahxb7"]
-[ext_resource type="Texture2D" uid="uid://viqjr4gifcp8" path="res://Assets/NPC.jpg" id="1_sa6sl"]
+[ext_resource type="Texture2D" uid="uid://viqjr4gifcp8" path="res://Assets/personajes/NPC.jpg" id="1_sa6sl"]
 
 [node name="PopupInfo" type="Node2D"]
 position = Vector2(13, 454)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdh7owy3dquna"
-path="res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"
+uid="uid://ybrt8nn7kcle"
+path="res://.godot/imported/oky.png-733eed8ddee75a9e8ecefbf2284eaeca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/actividades/cuadr.png"
-dest_files=["res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"]
+source_file="res://Assets/personajes/oky.png"
+dest_files=["res://.godot/imported/oky.png-733eed8ddee75a9e8ecefbf2284eaeca.ctex"]
 
 [params]
 

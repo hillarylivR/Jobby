@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdh7owy3dquna"
-path="res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"
+uid="uid://m3l6bnghjyo2"
+path="res://.godot/imported/tabl.png-12a8e4f3d399190315e79bae2bd468be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/actividades/cuadr.png"
-dest_files=["res://.godot/imported/cuadr.png-8ef3353bb1d816d36344d7ccf0e5187e.ctex"]
+source_file="res://Assets/tabl.png"
+dest_files=["res://.godot/imported/tabl.png-12a8e4f3d399190315e79bae2bd468be.ctex"]
 
 [params]
 
