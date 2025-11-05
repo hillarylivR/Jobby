@@ -6,13 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b4fenuyyr37oh" path="res://objetos/puerta.tscn" id="2_oc8td"]
 [ext_resource type="Script" uid="uid://43nt6l6xniyv" path="res://GlobalScripts/CambioEscenaArea2D.gd" id="3_moa72"]
 [ext_resource type="Script" uid="uid://diuxct1h2mfk4" path="res://Personaje/Movimiento.gd" id="4_g6gya"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://objetos/Pared.tscn" id="7_moa72"]
-[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://objetos/Tablon.tscn" id="8_moa72"]
-=======
 [ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://Objetos/Pared.tscn" id="7_moa72"]
 [ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://Objetos/Tablon.tscn" id="8_moa72"]
->>>>>>> 10a259e28b3aaac8b2151b1a9d7132e559e1764a
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6gya"]
 size = Vector2(75, 69)
