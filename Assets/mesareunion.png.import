@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://viqjr4gifcp8"
-path="res://.godot/imported/NPC.jpg-a807e648c5e9595f2e81a429633dc89a.ctex"
+uid="uid://d2xha2r7uomn8"
+path="res://.godot/imported/mesareunion.png-2cbec217a16b3eb968ecfc59a2d85141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/personajes/NPC.jpg"
-dest_files=["res://.godot/imported/NPC.jpg-a807e648c5e9595f2e81a429633dc89a.ctex"]
+source_file="res://Assets/mesareunion.png"
+dest_files=["res://.godot/imported/mesareunion.png-2cbec217a16b3eb968ecfc59a2d85141.ctex"]
 
 [params]
 

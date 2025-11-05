@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://djxgwhnkkfg4q"]
+
+[node name="ActividadAdm1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 643.0
+color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[node name="ContenedorPrincipal" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 35.0
+offset_right = 1108.0
+offset_bottom = 594.0
+
+[node name="VBoxMain" type="VBoxContainer" parent="ContenedorPrincipal"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+text = "Diseña tu Estrategia De Marketing"
+horizontal_alignment = 1
+
+[node name="HBoxSuperior" type="HBoxContainer" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+
+[node name="VBoxInformacion" type="VBoxContainer" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior"]
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxInformacion"]
+layout_mode = 2
+text = "Nombre de La Campaña"
+
+[node name="LineEdit" type="LineEdit" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxInformacion"]
+layout_mode = 2
+placeholder_text = "Nombre"
+
+[node name="LabelPublico" type="Label" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxInformacion"]
+layout_mode = 2
+text = "Público Objetivo
+"
+
+[node name="OptionPublico" type="OptionButton" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxInformacion"]
+layout_mode = 2
+selected = 3
+item_count = 3
+popup/item_0/text = "Jóvenes"
+popup/item_0/id = 0
+popup/item_1/text = "Adultos"
+popup/item_1/id = 1
+popup/item_2/text = "Empresas"
+popup/item_2/id = 2
+
+[node name="VBoxLogo" type="VBoxContainer" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior"]
+layout_mode = 2
+
+[node name="LogoPreview" type="TextureRect" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxLogo"]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 5
+
+[node name="BotonLogo" type="Button" parent="ContenedorPrincipal/VBoxMain/HBoxSuperior/VBoxLogo"]
+layout_mode = 2
+text = "Seleccionar Logotipo"
+
+[node name="LabelMovimientos" type="Label" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+
+[node name="CheckTV" type="CheckBox" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+
+[node name="CheckRedes" type="CheckBox" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+
+[node name="CheckDescuento" type="CheckBox" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2
+
+[node name="HBoxInferior" type="HBoxContainer" parent="ContenedorPrincipal/VBoxMain"]
+layout_mode = 2

@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://b2po58a4e3r57" path="res://Assets/pared.png" id="1_tcai3"]
 [ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="2_av3er"]
-[ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://Objetos/Pared.tscn" id="3_fdde5"]
-[ext_resource type="PackedScene" uid="uid://b4fenuyyr37oh" path="res://Objetos/Puerta.tscn" id="4_jcsfc"]
+[ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://objetos/Pared.tscn" id="3_fdde5"]
+[ext_resource type="PackedScene" uid="uid://b4fenuyyr37oh" path="res://objetos/puerta.tscn" id="4_jcsfc"]
 [ext_resource type="Script" uid="uid://43nt6l6xniyv" path="res://GlobalScripts/CambioEscenaArea2D.gd" id="5_qoqmk"]
-[ext_resource type="PackedScene" uid="uid://dhm55jj1ik3b4" path="res://Objetos/Computador.tscn" id="6_6s803"]
-[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://Objetos/Tablón.tscn" id="7_jsvup"]
+[ext_resource type="PackedScene" uid="uid://dhm55jj1ik3b4" path="res://objetos/Computador.tscn" id="6_6s803"]
+[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://objetos/Tablon.tscn" id="7_jsvup"]
 [ext_resource type="PackedScene" uid="uid://bhcti3h82ffp8" path="res://Personaje/Player.tscn" id="8_bhihd"]
 [ext_resource type="Script" uid="uid://diuxct1h2mfk4" path="res://Personaje/Movimiento.gd" id="9_cervd"]
 
@@ -16,7 +16,7 @@ size = Vector2(75, 69)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6hlg"]
 size = Vector2(266, 109)
 
-[node name="IngSistemas" type="Node2D"]
+[node name="Enfermeria" type="Node2D"]
 
 [node name="Decoracion" type="Node2D" parent="."]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcl7sdkkeq82l"]
+
+[ext_resource type="Texture2D" uid="uid://d2xha2r7uomn8" path="res://Assets/mesareunion.png" id="1_4h2mx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jto3h"]
+size = Vector2(361, 244)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(201, 143.75)
+scale = Vector2(0.515625, 0.42070484)
+texture = ExtResource("1_4h2mx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(185.5, 127)
+shape = SubResource("RectangleShape2D_jto3h")

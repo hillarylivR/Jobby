@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://csxnsbtq8qb0j"]
+
+[ext_resource type="Texture2D" uid="uid://b2po58a4e3r57" path="res://Assets/pared.png" id="1_odfgu"]
+[ext_resource type="Texture2D" uid="uid://eq2cn787t854" path="res://Assets/papel.png" id="2_53fpx"]
+[ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://objetos/Pared.tscn" id="3_m5yug"]
+[ext_resource type="PackedScene" uid="uid://b4fenuyyr37oh" path="res://objetos/puerta.tscn" id="4_rjpd2"]
+[ext_resource type="Script" uid="uid://43nt6l6xniyv" path="res://GlobalScripts/CambioEscenaArea2D.gd" id="5_sacpl"]
+[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://objetos/Tablon.tscn" id="7_a21ed"]
+[ext_resource type="PackedScene" uid="uid://dcl7sdkkeq82l" path="res://objetos/mesareunion.tscn" id="7_odfgu"]
+[ext_resource type="Script" uid="uid://dwvq3qmaxufxq" path="res://GlobalScripts/CambioEscenaArea2DAct.gd" id="8_53fpx"]
+[ext_resource type="PackedScene" uid="uid://bhcti3h82ffp8" path="res://Personaje/Player.tscn" id="8_d6an2"]
+[ext_resource type="Script" uid="uid://diuxct1h2mfk4" path="res://Personaje/Movimiento.gd" id="9_bx4b7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6gya"]
+size = Vector2(75, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5yug"]
+size = Vector2(356, 142)
+
+[node name="Administracion" type="Node2D"]
+
+[node name="Decoracion" type="Node2D" parent="."]
+
+[node name="Pared" type="Sprite2D" parent="Decoracion"]
+position = Vector2(483, 140.313)
+scale = Vector2(1.32055, 0.700666)
+texture = ExtResource("1_odfgu")
+
+[node name="Papel" type="Sprite2D" parent="Decoracion"]
+position = Vector2(480.00003, 422.00003)
+scale = Vector2(2.3652, 0.68109)
+texture = ExtResource("2_53fpx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(481, 268)
+zoom = Vector2(1.2, 1.2)
+
+[node name="Pared" parent="." instance=ExtResource("3_m5yug")]
+position = Vector2(-4, -96)
+
+[node name="Puerta" parent="." instance=ExtResource("4_rjpd2")]
+position = Vector2(649, 55)
+
+[node name="PuertaLobby" type="Area2D" parent="Puerta"]
+position = Vector2(-644, -51)
+script = ExtResource("5_sacpl")
+siguiente_escena = "res://Pantallas/Lobby/Lobby.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/PuertaLobby"]
+position = Vector2(721, 94)
+shape = SubResource("RectangleShape2D_g6gya")
+one_way_collision_margin = 0.0
+
+[node name="Tablon" parent="." instance=ExtResource("7_a21ed")]
+position = Vector2(2, -1)
+
+[node name="mesareunion" parent="." instance=ExtResource("7_odfgu")]
+position = Vector2(65, 330)
+
+[node name="CambioEscenaArea2DAct" type="Area2D" parent="mesareunion"]
+script = ExtResource("8_53fpx")
+siguiente_escena = "res://Pantallas/Administracion/ActividadAdm1.tscn"
+metadata/_custom_type_script = "uid://dwvq3qmaxufxq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mesareunion/CambioEscenaArea2DAct"]
+position = Vector2(186, 76)
+shape = SubResource("RectangleShape2D_m5yug")
+
+[node name="Player" parent="." instance=ExtResource("8_d6an2")]
+position = Vector2(479, 270)
+script = ExtResource("9_bx4b7")
+speed = 350
+
+[connection signal="body_entered" from="Puerta/PuertaLobby" to="Puerta/PuertaLobby" method="_on_body_entered"]
+[connection signal="body_entered" from="mesareunion/CambioEscenaArea2DAct" to="mesareunion/CambioEscenaArea2DAct" method="_on_body_entered"]

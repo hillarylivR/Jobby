@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://c021l7bj1krjc"]
 
 [ext_resource type="Script" uid="uid://dc8ypb5n44v" path="res://GlobalScripts/Popups/PopupDialog.gd" id="1_ahxb7"]
-[ext_resource type="Texture2D" uid="uid://viqjr4gifcp8" path="res://Assets/personajes/NPC.jpg" id="1_sa6sl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sa6sl"]
+load_path = "res://.godot/imported/akchuali.png-047f5b09048bddb9b81ade9bb38b086b.ctex"
 
 [node name="PopupInfo" type="Node2D"]
 position = Vector2(13, 454)
@@ -23,8 +25,9 @@ offset_right = 197.0
 offset_bottom = 632.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-texture = ExtResource("1_sa6sl")
+texture = SubResource("CompressedTexture2D_sa6sl")
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
