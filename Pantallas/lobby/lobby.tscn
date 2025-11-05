@@ -34,11 +34,7 @@ position = Vector2(481, 268)
 zoom = Vector2(1.2, 1.2)
 
 [node name="Pared" parent="." instance=ExtResource("7_moa72")]
-<<<<<<< HEAD
-position = Vector2(7, -16)
-=======
 position = Vector2(5, -3)
->>>>>>> 10a259e28b3aaac8b2151b1a9d7132e559e1764a
 
 [node name="PuertaSistemas" parent="." instance=ExtResource("2_oc8td")]
 position = Vector2(29, 109)
@@ -53,7 +49,6 @@ position = Vector2(233.5, 106.5)
 shape = SubResource("RectangleShape2D_g6gya")
 one_way_collision_margin = 0.0
 
-<<<<<<< HEAD
 [node name="PuertaAdministracion" parent="." instance=ExtResource("2_oc8td")]
 position = Vector2(697, 118)
 
@@ -66,7 +61,6 @@ siguiente_escena = "res://Pantallas/Administracion/Administracion.tscn"
 position = Vector2(233.5, 106.5)
 shape = SubResource("RectangleShape2D_g6gya")
 one_way_collision_margin = 0.0
-=======
 [node name="PuertaEnfermeria" parent="." instance=ExtResource("2_oc8td")]
 position = Vector2(230, 107)
 
@@ -77,7 +71,6 @@ siguiente_escena = "res://Pantallas/Enfermeria/Enfermeria.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaEnfermeria/Area2D"]
 position = Vector2(78, 58)
 shape = SubResource("RectangleShape2D_0uaa3")
->>>>>>> 10a259e28b3aaac8b2151b1a9d7132e559e1764a
 
 [node name="Tablon" parent="." instance=ExtResource("8_moa72")]
 position = Vector2(67, 37)
@@ -88,8 +81,5 @@ script = ExtResource("4_g6gya")
 speed = 350
 
 [connection signal="body_entered" from="PuertaSistemas/CambioEscena" to="PuertaSistemas/CambioEscena" method="_on_body_entered"]
-<<<<<<< HEAD
 [connection signal="body_entered" from="PuertaAdministracion/CambioEscena" to="PuertaAdministracion/CambioEscena" method="_on_body_entered"]
-=======
 [connection signal="body_entered" from="PuertaEnfermeria/Area2D" to="PuertaEnfermeria/Area2D" method="_on_body_entered"]
->>>>>>> 10a259e28b3aaac8b2151b1a9d7132e559e1764a
