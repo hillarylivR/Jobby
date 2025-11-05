@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db1pdgsmwwlu4"
-path="res://.godot/imported/botonatras.png-a0cf7bb40e84c58bf6ae843d69f02231.ctex"
+uid="uid://bcy2swx641ncp"
+path="res://.godot/imported/presion.png-74c2dc3fd224d3c00dab5eee22fcb63c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/botonatras.png"
-dest_files=["res://.godot/imported/botonatras.png-a0cf7bb40e84c58bf6ae843d69f02231.ctex"]
+source_file="res://Assets/actividades/presion.png"
+dest_files=["res://.godot/imported/presion.png-74c2dc3fd224d3c00dab5eee22fcb63c.ctex"]
 
 [params]
 

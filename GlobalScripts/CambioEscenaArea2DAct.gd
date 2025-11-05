@@ -3,7 +3,7 @@ extends Area2D
 
 @export var siguiente_escena: String        # Ruta completa de la escena destino
 @export var nombre_npc: String = "Guía"
-@export var imagen_npc: Texture = preload("res://Assets/NPC.jpg")
+@export var imagen_npc: Texture = preload("res://Assets/personajes/NPC.jpg")
 
 
 func _on_body_entered(body):

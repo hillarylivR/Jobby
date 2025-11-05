@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqivr6kqnm84v"]
+
+[ext_resource type="Texture2D" uid="uid://dkhxegpe1yjai" path="res://Assets/actividades/paciente.jpg" id="1_jaj0r"]
+[ext_resource type="Script" uid="uid://c46j5qbhelmn6" path="res://Pantallas/Enfermeria/MainEnf.gd" id="1_q7irc"]
+[ext_resource type="Texture2D" uid="uid://blyvkv2nyy3xm" path="res://Assets/actividades/papeles.png" id="2_g10ss"]
+[ext_resource type="Texture2D" uid="uid://bsp7te6hgh8jx" path="res://Assets/actividades/hombre.jpg" id="3_xr0nq"]
+[ext_resource type="Texture2D" uid="uid://db1pdgsmwwlu4" path="res://Assets/actividades/botonatras.png" id="4_e2ycd"]
+[ext_resource type="Script" uid="uid://domt4bsw6emwe" path="res://GlobalScripts/CambioEscenaBoton.gd" id="5_ph2c8"]
+[ext_resource type="Texture2D" uid="uid://csrspdim8a7bk" path="res://Assets/actividades/check.webp" id="6_ph2c8"]
+[ext_resource type="PackedScene" uid="uid://bpoqrgqipp64t" path="res://Objetos/ActEnfermeria/CeldaPaciente.tscn" id="7_boyjf"]
+[ext_resource type="Script" uid="uid://c27w6np2otdn2" path="res://Pantallas/Enfermeria/anadir_instrumentos.gd" id="8_ka137"]
+
+[node name="ActividadEnf" type="Node2D"]
+script = ExtResource("1_q7irc")
+
+[node name="Decoracion" type="Node2D" parent="."]
+
+[node name="Fondo" type="ColorRect" parent="Decoracion"]
+offset_right = 1159.0
+offset_bottom = 655.0
+
+[node name="Paciente" type="Sprite2D" parent="Decoracion"]
+position = Vector2(866, 246)
+texture = ExtResource("1_jaj0r")
+
+[node name="Bandeja" type="ColorRect" parent="Decoracion"]
+offset_left = 502.0
+offset_top = 460.0
+offset_right = 1180.0
+offset_bottom = 658.0
+color = Color(0.4931059, 0.6432692, 0.68252814, 1)
+
+[node name="Papeles" type="Sprite2D" parent="Decoracion"]
+position = Vector2(244.49998, 284.5)
+scale = Vector2(1.6360291, 1.4942857)
+texture = ExtResource("2_g10ss")
+
+[node name="Hombre" type="Sprite2D" parent="Decoracion"]
+position = Vector2(119.75001, 170.25002)
+scale = Vector2(0.17444445, 0.15444443)
+texture = ExtResource("3_xr0nq")
+
+[node name="Nombre" type="Label" parent="Decoracion"]
+offset_left = 168.0
+offset_top = 152.0
+offset_right = 306.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "José Torres"
+
+[node name="Label" type="Label" parent="Decoracion"]
+offset_left = 150.0
+offset_top = 219.0
+offset_right = 403.0
+offset_bottom = 526.0
+pivot_offset = Vector2(596, 451)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tomar latidos cardiacos
+
+Tomar la presión
+
+Revisar la vena canalizada
+
+Administrar los
+ medicamentos"
+
+[node name="BotónRetroceder" type="Button" parent="."]
+offset_left = 2.0000005
+offset_top = 548.0
+offset_right = 522.0
+offset_bottom = 1068.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_e2ycd")
+script = ExtResource("5_ph2c8")
+siguiente_escena = "res://Pantallas/Enfermeria/Enfermeria.tscn"
+
+[node name="Check" type="Sprite2D" parent="."]
+position = Vector2(119, 231)
+scale = Vector2(0.03486056, 0.051438835)
+texture = ExtResource("6_ph2c8")
+
+[node name="CeldaPaciente" parent="." instance=ExtResource("7_boyjf")]
+position = Vector2(875, 195)
+
+[node name="AnadirObjetos" type="Node2D" parent="."]
+script = ExtResource("8_ka137")
+
+[connection signal="pressed" from="BotónRetroceder" to="BotónRetroceder" method="_on_pressed"]

@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cltwv7vj1u41v"]
+[gd_scene load_steps=7 format=3 uid="uid://cltwv7vj1u41v"]
 
 [ext_resource type="Texture2D" uid="uid://b0jxucxb8hfov" path="res://Assets/actividades/FondoSis.png" id="1_sffbt"]
 [ext_resource type="Texture2D" uid="uid://bdh7owy3dquna" path="res://Assets/actividades/cuadr.png" id="2_j4h4c"]
 [ext_resource type="Script" uid="uid://e3cjrl4clsae" path="res://Objetos/ActSistemas/AgregarObjetos.gd" id="4_dn1ym"]
-[ext_resource type="PackedScene" uid="uid://wgqqs0tm7usq" path="res://Objetos/ActSistemas/Bot├│nInicio.tscn" id="5_eq68t"]
-[ext_resource type="Script" uid="uid://domt4bsw6emwe" path="res://GlobalScripts/CambioEscenaBot├│n.gd" id="5_j4h4c"]
-[ext_resource type="Script" uid="uid://rxkw02uxjicn" path="res://Objetos/ActSistemas/Bot├│nInicio.gd" id="6_6l7fx"]
-[ext_resource type="Texture2D" uid="uid://db1pdgsmwwlu4" path="res://Assets/botonatras.png" id="7_8lrnl"]
+[ext_resource type="PackedScene" uid="uid://wgqqs0tm7usq" path="res://Objetos/ActSistemas/BotonInicio.tscn" id="5_eq68t"]
+[ext_resource type="Script" uid="uid://domt4bsw6emwe" path="res://GlobalScripts/CambioEscenaBoton.gd" id="5_j4h4c"]
+[ext_resource type="Texture2D" uid="uid://db1pdgsmwwlu4" path="res://Assets/actividades/botonatras.png" id="7_8lrnl"]
 
 [node name="Act1" type="Node2D"]
 
@@ -50,6 +49,5 @@ offset_left = 1047.0
 offset_top = 27.0
 offset_right = 1097.0
 offset_bottom = 81.0
-script = ExtResource("6_6l7fx")
 
 [connection signal="pressed" from="AñadirObjetos/Button" to="AñadirObjetos" method="_on_button_pressed"]

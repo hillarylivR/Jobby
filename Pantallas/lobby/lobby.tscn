@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://djdam25ipdhpw"]
+[gd_scene load_steps=11 format=3 uid="uid://djdam25ipdhpw"]
 
 [ext_resource type="PackedScene" uid="uid://bhcti3h82ffp8" path="res://Personaje/Player.tscn" id="1_pe5wo"]
 [ext_resource type="Texture2D" uid="uid://b2po58a4e3r57" path="res://Assets/pared.png" id="2_eqyqt"]
@@ -7,23 +7,26 @@
 [ext_resource type="Script" uid="uid://43nt6l6xniyv" path="res://GlobalScripts/CambioEscenaArea2D.gd" id="3_moa72"]
 [ext_resource type="Script" uid="uid://diuxct1h2mfk4" path="res://Personaje/Movimiento.gd" id="4_g6gya"]
 [ext_resource type="PackedScene" uid="uid://c1i3iouex1xbf" path="res://Objetos/Pared.tscn" id="7_moa72"]
-[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://Objetos/Tabl├│n.tscn" id="8_moa72"]
+[ext_resource type="PackedScene" uid="uid://dsxyalfkyy7b5" path="res://Objetos/Tablon.tscn" id="8_moa72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6gya"]
 size = Vector2(75, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uaa3"]
+size = Vector2(76, 62)
 
 [node name="Lobby" type="Node2D"]
 
 [node name="Decoracion" type="Node2D" parent="."]
 
 [node name="Pared" type="Sprite2D" parent="Decoracion"]
-position = Vector2(483, 170.81274)
-scale = Vector2(1.32055, 0.84836453)
+position = Vector2(483, 160.81273)
+scale = Vector2(1.32055, 0.7999384)
 texture = ExtResource("2_eqyqt")
 
 [node name="Papel" type="Sprite2D" parent="Decoracion"]
-position = Vector2(484.5, 451.00003)
-scale = Vector2(2.3652, 0.5801283)
+position = Vector2(484.5, 444.00003)
+scale = Vector2(2.3652, 0.60256416)
 texture = ExtResource("2_moa72")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -31,10 +34,10 @@ position = Vector2(481, 268)
 zoom = Vector2(1.2, 1.2)
 
 [node name="Pared" parent="." instance=ExtResource("7_moa72")]
-position = Vector2(1, -15)
+position = Vector2(5, -3)
 
 [node name="PuertaSistemas" parent="." instance=ExtResource("2_oc8td")]
-position = Vector2(157, 118)
+position = Vector2(29, 109)
 
 [node name="CambioEscena" type="Area2D" parent="PuertaSistemas"]
 position = Vector2(-156, -51)
@@ -46,6 +49,17 @@ position = Vector2(233.5, 106.5)
 shape = SubResource("RectangleShape2D_g6gya")
 one_way_collision_margin = 0.0
 
+[node name="PuertaEnfermeria" parent="." instance=ExtResource("2_oc8td")]
+position = Vector2(230, 107)
+
+[node name="Area2D" type="Area2D" parent="PuertaEnfermeria"]
+script = ExtResource("3_moa72")
+siguiente_escena = "res://Pantallas/Enfermeria/Enfermeria.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PuertaEnfermeria/Area2D"]
+position = Vector2(78, 58)
+shape = SubResource("RectangleShape2D_0uaa3")
+
 [node name="Tablon" parent="." instance=ExtResource("8_moa72")]
 position = Vector2(67, 37)
 
@@ -55,3 +69,4 @@ script = ExtResource("4_g6gya")
 speed = 350
 
 [connection signal="body_entered" from="PuertaSistemas/CambioEscena" to="PuertaSistemas/CambioEscena" method="_on_body_entered"]
+[connection signal="body_entered" from="PuertaEnfermeria/Area2D" to="PuertaEnfermeria/Area2D" method="_on_body_entered"]
