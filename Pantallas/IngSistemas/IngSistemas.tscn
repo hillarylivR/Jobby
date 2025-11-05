@@ -15,7 +15,7 @@
 size = Vector2(75, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6hlg"]
-size = Vector2(266, 109)
+size = Vector2(242, 104)
 
 [node name="IngSistemas" type="Node2D"]
 
@@ -67,7 +67,7 @@ siguiente_escena = "res://Pantallas/IngSistemas/ActividadSis1.tscn"
 metadata/_custom_type_script = "uid://43nt6l6xniyv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Computador/InicioAct1"]
-position = Vector2(-28, -37.5)
+position = Vector2(3, -23)
 shape = SubResource("RectangleShape2D_v6hlg")
 
 [node name="Player" parent="." instance=ExtResource("1_pe5wo")]

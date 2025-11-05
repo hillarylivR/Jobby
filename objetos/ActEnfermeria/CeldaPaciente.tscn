@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpoqrgqipp64t"]
+
+[ext_resource type="Script" uid="uid://bl246n7xa54rq" path="res://Objetos/ActEnfermeria/celda_paciente.gd" id="1_qsfcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7mxh"]
+size = Vector2(202, 113)
+
+[node name="CeldaPaciente" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_qsfcj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(91, 46.5)
+shape = SubResource("RectangleShape2D_w7mxh")
